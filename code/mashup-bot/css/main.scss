@@ -1,0 +1,70 @@
+.circleBase {
+    border-radius: 100%;
+}
+
+.type1 {
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    border: 3px solid red;
+}
+
+
+.canvas {
+  width: 200px;
+  height: 200px;
+}
+
+
+html {
+  font-size: 16px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  margin-top: 1rem;
+  text-align: center;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #90A4AE;
+}
+
+
+
+.Slider {
+  &:hover {
+    cursor: pointer;
+  }
+
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  transform: rotate(-90deg);
+  cursor: ns-resize;
+  .Slider-circle,
+  .Slider-bar {
+    fill: transparent;
+  }
+  .Slider-circle {
+    stroke: #607D8B;
+  }
+
+  .Slider-bar {
+    stroke: #00B0FF;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 0;
+  }
+}
+
+#prog {
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+}
