@@ -1,0 +1,39 @@
+# Site settings
+title: Aylan Mello
+description: 'Code, music, languages, travel.'
+url: ''
+baseurl: '/'
+# google_analytics: 'UA-XXXXXX-X'
+# disqus_shortname: 'your-disqus-name'
+
+author:
+  name: 'Aylan Mello'
+  email: hello@aylan.io
+  # twitter_username: joshgerdes
+  # facebook_username: joshgerdes
+  github_username:  aylanismello
+  linkedin_username:  aylanmello
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
+
+# Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  # use Github Flavored Markdown
+  # input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+
+gems: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
