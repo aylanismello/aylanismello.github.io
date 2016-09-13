@@ -1,13 +1,14 @@
 import React from 'react';
 import loader  from 'webaudio-buffer-loader';
-import Slider from './slider';
-import ReactSlider from './react_slider';
 import ProgressCircle from './progress_circle';
 import WebAudioScheduler from 'web-audio-scheduler';
+import Channel from './channel';
+
 
 const path = './stems';
 const beatsPath = './stems/beats';
-
+const CIRCUMFERENCE = Math.PI * 2;
+const GREENISH = "#59b2a1";
 const TimeSlices = {
 	FOUR: 4,
 	EIGHT: 8,
@@ -25,7 +26,7 @@ class Root extends React.Component {
 
 		super(props);
 
-		debugger;
+		// debugger;
 
 
 		this.state = {
@@ -34,21 +35,15 @@ class Root extends React.Component {
 			playing: false
 		};
 
-		let canvas = document.querySelector("#can");
-		let ctx = canvas.getContext("2d");
-		ctx.lineWidth = 15;
-		ctx.strokeStyle = "#59b2a1";
-		let max = 2 * Math.PI;
 
-		this.circle = {
-			canvas,
-			ctx,
-			max
-		};
 
 		this.drawAtRad = this.drawAtRad.bind(this);
 		this.createAudioPipeline = this.createAudioPipeline.bind(this);
 		this.contxt = new AudioContext();
+		this.nextTrackIdx = 0;
+
+		// this.canvasContexts = [];
+		this.circles = [];
 
 		this.masterGain = this.contxt.createGain();
 		this.masterGain.connect(this.contxt.destination);
@@ -63,26 +58,72 @@ class Root extends React.Component {
 		this.setMasterGain = this.setMasterGain.bind(this);
 		this.switchTrack = this.switchTrack.bind(this);
 
+		this.makeImages = this.makeImages.bind(this);
+		// this.makeImages(this.circle.ctx);
+		this.setCanvas = this.setCanvas.bind(this);
 		this.createAudioPipeline();
 
 
 
 	}
 
+	setCanvas(id, idx) {
+
+		let canvas = document.querySelector(`#${id}`);
+
+		let ctx = canvas.getContext("2d");
+
+
+		ctx.lineWidth = 15;
+		ctx.strokeStyle = GREENISH;
+		let max = 2 * Math.PI;
+
+		// this.circle = {
+		// 	canvas,
+		// 	ctx,
+		// 	max
+		// };
+		let circle = {
+			canvas,
+			ctx,
+			max
+		};
+
+		this.circles.push(circle);
+
+
+	}
+
+
+	makeImages(ctx) {
+		let base_image = new Image();
+  	base_image.src = 'images/kendrick2.png';
+
+  	base_image.onload = () => {
+	    ctx.drawImage(base_image, 80, 34);
+			// this.createAudioPipeline();
+	  };
+
+	}
 
 
 
 	drawAtRad(startingRadian, strokeLength, restart=false) {
 
-		if(restart){
-			this.circle.ctx.clearRect(0, 0, this.circle.canvas.width, this.circle.canvas.height);
-		}
-		this.circle.ctx.beginPath();
-		this.circle.ctx.arc(75, 75, 50, startingRadian, startingRadian + strokeLength);
-		this.circle.ctx.fillStyle = "black";
-		this.circle.ctx.fill();
+		startingRadian -= Math.PI / 2.0;
 
-		this.circle.ctx.stroke();
+		this.circles.forEach(circle => {
+
+			let ctx = circle.ctx;
+
+			if(restart){
+				ctx.clearRect(0, 0, circle.canvas.width, circle.canvas.height);
+			}
+
+			ctx.beginPath();
+			ctx.arc(100, 60, 50, startingRadian, startingRadian + strokeLength);
+			ctx.stroke();
+		});
 
 
 
@@ -120,15 +161,8 @@ class Root extends React.Component {
 			`${beatsPath}/so_fresh.wav`
 		];
 
-		let buffers = [
-				`${path}/beat.wav`,
-				`${path}/acapella.wav`,
-				`${path}/melody.wav`
-			];
 
-		debugger;
 
-		this.buffers = buffers;
 
 		let subChannels = [];
 
@@ -151,7 +185,6 @@ class Root extends React.Component {
 
 			this.setState({loaded: true});
 
-			// window.channels = this.channels;
 		});
 
 
@@ -162,14 +195,11 @@ class Root extends React.Component {
 
 	metronome(e) {
 		let t0 = e.playbackTime;
-		// console.log(`starting metronome at ${e.playbackTime}`);
-		// debugger;
 
-
+		this.switchTrack(this.nextTrackIdx, true);
 
 		for (var step = 0; step <= TIME_SLICE; step++) {
 			let schedStartTime = t0 + (this.spb * step);
-
 			if (step === TIME_SLICE) {
 				this.sched.insert(t0 + (this.spb * TIME_SLICE), this.metronome);
 			} else {
@@ -181,14 +211,11 @@ class Root extends React.Component {
 	}
 
 	tick(e) {
-		// console.log(`tick ${e.playbackTime} and beat ${e.args.beat}`);
 
-		let arcSize = (this.circle.max / (TIME_SLICE * 1.0));
+		let arcSize = (CIRCUMFERENCE / (Number(TIME_SLICE) * 1.0));
 
-		let startingRad = ((this.circle.max / TIME_SLICE ) * e.args.beat);
+		let startingRad = ((CIRCUMFERENCE / TIME_SLICE ) * e.args.beat);
 
-		// console.log(`startingRad: ${startingRad}`);
-		// let endRad = startingRad + arcSize;
 		if(e.args.beat === (TIME_SLICE - 1)) {
 			this.drawAtRad(startingRad, arcSize, true);
 		} else {
@@ -202,7 +229,6 @@ class Root extends React.Component {
 
 	handleUser() {
 		if (this.state.playing) {
-			console.log('stop');
 			this.stopMetronome();
 		} else {
 			this.startMetronome();
@@ -233,17 +259,34 @@ class Root extends React.Component {
 		this.masterGain.gain.value = gain;
 	}
 
-	switchTrack() {
-		// debugger;
-		// return e => {
-			// let newTrackIdx = e.currentTarget.value;
-		let selectedTrackIdx = arguments[0];
-		let selectedTrack = this.beatChannel.subChannels[selectedTrackIdx];
+	switchTrack(trackIdx, isScheduled=false) {
 
-		console.log(`switching to track ${selectedTrack}`);
-		console.log(`muting all tracks first`);
+		if (!isScheduled) {
+			this.nextTrackIdx = trackIdx;
+			return;
+		}
+
+		console.log('got to be scheduled');
+
+		// THIS EVENT SHOULD BE SCHEDULED.
+		let selectedTrack = this.beatChannel.subChannels[trackIdx];
+
+
+
+		this.resetAllCircles(this.circles);
+		this.circles[trackIdx].ctx.strokeStyle = "#45d9e5";
+
+
+
 		this.muteAllTracks(this.beatChannel.subChannels);
 		selectedTrack.setGain(0.5);
+	}
+
+	resetAllCircles(circles) {
+		circles.forEach(circle => {
+			circle.ctx.strokeStyle = GREENISH;
+		});
+
 	}
 
 	muteAllTracks(subChannels) {
@@ -253,7 +296,10 @@ class Root extends React.Component {
 		});
 
 
-	}
+
+
+
+}
 
 	render() {
 
@@ -262,18 +308,11 @@ class Root extends React.Component {
 		if (this.state.loaded){
 			return (
 				<div>
-					{this.beatChannel.subChannels.map((subChannel, idx) => {
-						return (
-							<div>
-							<ReactSlider setGain={subChannel.setGain} idx={idx}
-								switchTrack={this.switchTrack}/>
-							{subChannel.pathName}
-							</div>
-						);
-					})}
+					<Channel subChannels={this.beatChannel.subChannels}
+						switchTrack={this.switchTrack} setChannelGain={this.beatChannel.setGain}
+						setCanvas={this.setCanvas}/>
 
 
-						{/* <ReactSlider setGain={this.setMasterGain}/> */}
 
 					<button onClick={this.handleUser} >{playerText}</button>
 				</div>

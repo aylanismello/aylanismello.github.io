@@ -1,3 +1,5 @@
+
+
 .circleBase {
     border-radius: 100%;
 }
@@ -8,12 +10,37 @@
     background: yellow;
     border: 3px solid red;
 }
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+
+}
 
 
-.canvas {
+
+
+.track-pic {
   width: 200px;
   height: 200px;
+  // background: gray;
+  // background-image: url('../images/kendrick2.png');
+  // padding: 10px 10px;
+  margin: 10px;
+  border-radius: 10000px;
+
+  .sound-circle {
+    width: inherit;
+    height: inherit;
+
+  }
+
 }
+
+// .canvas {
+//   width: 200px;
+//   height: 200px;
+// }
 
 
 html {
