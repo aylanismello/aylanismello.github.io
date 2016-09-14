@@ -1,4 +1,6 @@
 
+@import 'https://fonts.googleapis.com/css?family=Baloo+Tamma';
+
 
 .circleBase {
     border-radius: 100%;
@@ -17,8 +19,21 @@ img {
 
 }
 
+.mix-board {
+  display: flex;
+}
 
-
+.fft {
+  border-radius: 1000px;
+    /* height: 400px; */
+    width: 200px;
+    /* height: auto; */
+    height: 200px;
+    margin: 20px
+}
+//
+//
+//
 
 .track-pic {
   width: 200px;
@@ -63,13 +78,18 @@ p {
   color: #90A4AE;
 }
 
+.channel-name {
+  text-align: center;
+  font-family: "Baloo Tamma", Arial;
+  text-transform: uppercase;
 
+}
 
 .Slider {
   &:hover {
     cursor: pointer;
   }
-
+  margin: 0 auto;
   display: block;
   width: 5rem;
   height: 5rem;

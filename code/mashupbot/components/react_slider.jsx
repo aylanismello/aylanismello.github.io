@@ -4,7 +4,7 @@ class ReactSlider extends React.Component {
 
 	constructor(props) {
 		super(props);
-	  this.state = { value: 0 };
+	  this.state = { value: props.defaultGain };
 		this.handleChange = this.handleChange.bind(this);
 		this.setGain = this.props.setGain;
 	}

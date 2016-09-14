@@ -36,6 +36,9 @@ header: Links
 * [Darwin Tunes](http://darwintunes.org/)
 * [E-Sitar](https://www.youtube.com/watch?v=l8UsRkWhNa4)
 
+### Minutae
+* [Create Music for Listening](http://web.media.mit.edu/~tristan/)
+
 ###Introspection
 * [8 Hour Work Day?](http://lifehacker.com/why-we-should-rethink-the-eight-hour-workday-515742249)
 * [Fuck it, Ship It](https://medium.com/@bethebutterfly/fuck-it-ship-it-48321933b227#.t3r4e1aw9)
