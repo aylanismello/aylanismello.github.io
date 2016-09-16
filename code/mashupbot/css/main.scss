@@ -1,5 +1,131 @@
-
 @import 'https://fonts.googleapis.com/css?family=Baloo+Tamma';
+@import 'https://fonts.googleapis.com/css?family=Bungee+Shade|Monoton';
+
+
+$navbar-height: 70px;
+
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+
+.instructions-container {
+  .instructions {
+    display: block;
+    background: whitesmoke;
+    width: 700px;
+    height: 700px;
+    margin: 0 auto;
+
+    .x-modal {
+      width: 50px;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+
+
+.mother-container {
+
+  .navbar-container {
+    position: fixed;
+  top: 0;
+  left: 0;
+  background: whitesmoke;
+  width: 100%;
+  text-align: center;
+  display: table;
+  height: 50px;
+  z-index: 1000;
+
+     .logo {
+       display: table-cell;
+       vertical-align: middle;
+       font-family: "Monoton";
+       font-size: 24px;
+       text-align: center;
+
+     }
+
+  }
+
+  .container {
+    display: flex;
+/* align-items: center; */
+justify-content: center;
+top: 110px;
+left: 0px;
+position: absolute;
+
+
+
+    //  dsfdf
+     .mix-board {
+       display: flex;
+
+       .channel-name {
+         text-align: center;
+         font-family: "Baloo Tamma", Arial;
+         text-transform: uppercase;
+
+       }
+       .track {
+          margin: 10px;
+         .fft {
+           border-radius: 1000px;
+             /* height: 400px; */
+             width: 100px;
+             /* height: auto; */
+             height: 100px;
+         }
+       }
+
+       .mix-control-container {
+         .play-button {
+           width: 100px;
+           height: auto;
+           display: block;
+           &:hover {
+             cursor: pointer;
+           }
+         }
+
+         .metronome-container {
+           display: flex;
+    /* position: fixed; */
+    /* left: 0; */
+    /* top: 70px; */
+            background: black;
+            width: 200px;
+            height: 300px;
+
+
+           .metronome{
+             margin: 0 auto;
+             font-size: 48px;
+             color: #77d0c0;
+              max-width: 50%;
+
+             .metronome-beat {
+               font-family: Monoton, Arial;
+             }
+           }
+         }
+       }
+
+     }
+
+
+   }
+}
 
 
 .circleBase {
@@ -19,21 +145,6 @@ img {
 
 }
 
-.mix-board {
-  display: flex;
-}
-
-.fft {
-  border-radius: 1000px;
-    /* height: 400px; */
-    width: 200px;
-    /* height: auto; */
-    height: 200px;
-    margin: 20px
-}
-//
-//
-//
 
 .track-pic {
   width: 200px;
@@ -51,12 +162,6 @@ img {
   }
 
 }
-
-// .canvas {
-//   width: 200px;
-//   height: 200px;
-// }
-
 
 html {
   font-size: 16px;
@@ -78,12 +183,6 @@ p {
   color: #90A4AE;
 }
 
-.channel-name {
-  text-align: center;
-  font-family: "Baloo Tamma", Arial;
-  text-transform: uppercase;
-
-}
 
 .Slider {
   &:hover {
@@ -108,10 +207,4 @@ p {
     stroke-dashoffset: 0;
     stroke-dasharray: 0;
   }
-}
-
-#prog {
-  margin: 20px;
-  width: 200px;
-  height: 200px;
 }

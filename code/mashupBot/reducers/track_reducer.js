@@ -6,6 +6,7 @@ let defaultTrack = Object.freeze({
 	 	beat: 0,
 		acapella: 0,
 		melody: 0
+	
 	}
 });
 

@@ -1,4 +1,80 @@
 @import "https://fonts.googleapis.com/css?family=Baloo+Tamma";
+@import "https://fonts.googleapis.com/css?family=Bungee+Shade|Monoton";
+img {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+.instructions-container .instructions {
+  display: block;
+  background: whitesmoke;
+  width: 700px;
+  height: 700px;
+  margin: 0 auto; }
+  .instructions-container .instructions .x-modal {
+    width: 50px; }
+    .instructions-container .instructions .x-modal:hover {
+      cursor: pointer; }
+
+.mother-container .navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: whitesmoke;
+  width: 100%;
+  text-align: center;
+  display: table;
+  height: 50px;
+  z-index: 1000; }
+  .mother-container .navbar-container .logo {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: "Monoton";
+    font-size: 24px;
+    text-align: center; }
+.mother-container .container {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  top: 110px;
+  left: 0px;
+  position: absolute; }
+  .mother-container .container .mix-board {
+    display: flex; }
+    .mother-container .container .mix-board .channel-name {
+      text-align: center;
+      font-family: "Baloo Tamma", Arial;
+      text-transform: uppercase; }
+    .mother-container .container .mix-board .track {
+      margin: 10px; }
+      .mother-container .container .mix-board .track .fft {
+        border-radius: 1000px;
+        /* height: 400px; */
+        width: 100px;
+        /* height: auto; */
+        height: 100px; }
+    .mother-container .container .mix-board .mix-control-container .play-button {
+      width: 100px;
+      height: auto;
+      display: block; }
+      .mother-container .container .mix-board .mix-control-container .play-button:hover {
+        cursor: pointer; }
+    .mother-container .container .mix-board .mix-control-container .metronome-container {
+      display: flex;
+      /* position: fixed; */
+      /* left: 0; */
+      /* top: 70px; */
+      background: black;
+      width: 200px;
+      height: 300px; }
+      .mother-container .container .mix-board .mix-control-container .metronome-container .metronome {
+        margin: 0 auto;
+        font-size: 48px;
+        color: #77d0c0;
+        max-width: 50%; }
+        .mother-container .container .mix-board .mix-control-container .metronome-container .metronome .metronome-beat {
+          font-family: Monoton, Arial; }
+
 .circleBase {
   border-radius: 100%; }
 
@@ -12,17 +88,6 @@ img {
   width: 100%;
   height: auto;
   display: block; }
-
-.mix-board {
-  display: flex; }
-
-.fft {
-  border-radius: 1000px;
-  /* height: 400px; */
-  width: 200px;
-  /* height: auto; */
-  height: 200px;
-  margin: 20px; }
 
 .track-pic {
   width: 200px;
@@ -50,11 +115,6 @@ p {
   font-size: 1.4rem;
   color: #90A4AE; }
 
-.channel-name {
-  text-align: center;
-  font-family: "Baloo Tamma", Arial;
-  text-transform: uppercase; }
-
 .Slider {
   margin: 0 auto;
   display: block;
@@ -73,10 +133,5 @@ p {
     stroke: #00B0FF;
     stroke-dashoffset: 0;
     stroke-dasharray: 0; }
-
-#prog {
-  margin: 20px;
-  width: 200px;
-  height: 200px; }
 
 /*# sourceMappingURL=main.css.map */
