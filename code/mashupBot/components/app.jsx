@@ -120,19 +120,19 @@ class App extends React.Component {
 
 		let buffers = {
 			beat: [
-				`${BEATS_PATH}/backseat.wav`,
-				`${BEATS_PATH}/yonkers.wav`,
-				`${BEATS_PATH}/so_fresh.wav`
+				`http://res.cloudinary.com/dfkrjl3pb/video/upload/q_10/v1474011247/mashupbot/backseat.mp3`,
+				`http://res.cloudinary.com/dfkrjl3pb/video/upload/q_10/v1474011255/mashupbot/yonkers.mp3`,
+				`http://res.cloudinary.com/dfkrjl3pb/video/upload/q_10/v1474011250/mashupbot/so_fresh.mp3`
 			],
 			melody: [
-				`${MELODIES_PATH}/1994.wav`,
-				`${MELODIES_PATH}/lullaby.wav`,
-				`${MELODIES_PATH}/mercy_me.wav`
+				`http://res.cloudinary.com/dfkrjl3pb/video/upload/q_10/v1474011260/mashupbot/1994.mp3`,
+				`http://res.cloudinary.com/dfkrjl3pb/video/upload/q_10/v1474011225/mashupbot/lullaby.mp3`,
+				`http://res.cloudinary.com/dfkrjl3pb/video/upload/ac_mp3,q_10/v1474011242/mashupbot/mercy_me.mp3`
 			],
 			acapella: [
-				`${ACAPELLAS_PATH}/bob.wav`,
-				`${ACAPELLAS_PATH}/green_light.wav`,
-				`${ACAPELLAS_PATH}/gucci.wav`
+				`http://res.cloudinary.com/dfkrjl3pb/video/upload/q_10/v1474011238/mashupbot/bob.mp3`,
+				`http://res.cloudinary.com/dfkrjl3pb/video/upload/q_10/v1474011246/mashupbot/green_light.mp3`,
+				`http://res.cloudinary.com/dfkrjl3pb/video/upload/q_10/v1474011240/mashupbot/gucci.mp3`
 			]
 		};
 
@@ -271,14 +271,13 @@ class App extends React.Component {
 			return (
 
 			<div className="mother-container">
-
+				<Instructions/>
 				<nav className="navbar-container">
 					<div className="logo"><h1>MashupBot!</h1></div>
 				</nav>
 
 				<div className="container">
 
-					<Instructions/>
 
 
 
@@ -287,10 +286,10 @@ class App extends React.Component {
 					<div className="mix-board">
 					<MixControlContainer handlePlayToggle={this.handlePlayToggle}/>
 
+						<div className="channels">
 						{Object.keys(this.props.channels).map((channel, idx) => {
 							return (
 
-								<div className="channels">
 									<Channel
 										tracks={this.props.channels[channel].tracks}
 										channelName={channel}
@@ -298,10 +297,10 @@ class App extends React.Component {
 										defaultGain={DEFAULT_CHANNEL_GAIN}
 										key={idx}
 										/>
-								</div>
 
 							);
 						})}
+							</div>
 
 					</div>
 
@@ -313,6 +312,7 @@ class App extends React.Component {
 	 	} else {
 				return (
 					<div>
+
 					<h1> LOADING </h1>
 					</div>
 				);

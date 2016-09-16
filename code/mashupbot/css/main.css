@@ -7,10 +7,10 @@ img {
 
 .instructions-container .instructions {
   display: block;
-  background: whitesmoke;
+  background: #215eb2;
   width: 700px;
   height: 700px;
-  margin: 0 auto; }
+  margin: 116px auto; }
   .instructions-container .instructions .x-modal {
     width: 50px; }
     .instructions-container .instructions .x-modal:hover {
@@ -36,44 +36,58 @@ img {
   display: flex;
   /* align-items: center; */
   justify-content: center;
-  top: 110px;
-  left: 0px;
-  position: absolute; }
+  margin-top: 100px; }
   .mother-container .container .mix-board {
     display: flex; }
-    .mother-container .container .mix-board .channel-name {
-      text-align: center;
-      font-family: "Baloo Tamma", Arial;
-      text-transform: uppercase; }
-    .mother-container .container .mix-board .track {
-      margin: 10px; }
-      .mother-container .container .mix-board .track .fft {
+    .mother-container .container .mix-board .channels {
+      display: flex;
+      padding-left: 80px; }
+      .mother-container .container .mix-board .channels .channel-name {
+        text-align: center;
+        font-family: "Baloo Tamma", Arial;
+        text-transform: uppercase;
+        font-size: 20px; }
+      .mother-container .container .mix-board .channels .track .fft {
+        margin: 10px;
         border-radius: 1000px;
         /* height: 400px; */
         width: 100px;
         /* height: auto; */
         height: 100px; }
-    .mother-container .container .mix-board .mix-control-container .play-button {
-      width: 100px;
-      height: auto;
-      display: block; }
-      .mother-container .container .mix-board .mix-control-container .play-button:hover {
-        cursor: pointer; }
-    .mother-container .container .mix-board .mix-control-container .metronome-container {
+        .mother-container .container .mix-board .channels .track .fft:hover {
+          cursor: pointer;
+          opacity: 0.7;
+          border: 3px solid black;
+          margin: 7px; }
+    .mother-container .container .mix-board .mix-control-container {
+      height: inherit;
       display: flex;
-      /* position: fixed; */
-      /* left: 0; */
-      /* top: 70px; */
-      background: black;
-      width: 200px;
-      height: 300px; }
-      .mother-container .container .mix-board .mix-control-container .metronome-container .metronome {
-        margin: 0 auto;
-        font-size: 48px;
-        color: #77d0c0;
-        max-width: 50%; }
-        .mother-container .container .mix-board .mix-control-container .metronome-container .metronome .metronome-beat {
-          font-family: Monoton, Arial; }
+      flex-direction: column; }
+      .mother-container .container .mix-board .mix-control-container .play-button {
+        width: 100px;
+        height: auto;
+        display: block;
+        /* background: green; */
+        /* text-align: center; */
+        /* display: flex; */
+        margin: 90px auto; }
+        .mother-container .container .mix-board .mix-control-container .play-button:hover {
+          cursor: pointer; }
+      .mother-container .container .mix-board .mix-control-container .metronome-container {
+        display: flex;
+        /* position: fixed; */
+        /* left: 0; */
+        /* top: 70px; */
+        background: black;
+        width: 200px;
+        height: 300px; }
+        .mother-container .container .mix-board .mix-control-container .metronome-container .metronome {
+          margin: 0 auto;
+          font-size: 48px;
+          color: #77d0c0;
+          max-width: 50%; }
+          .mother-container .container .mix-board .mix-control-container .metronome-container .metronome .metronome-beat {
+            font-family: Monoton, Arial; }
 
 .circleBase {
   border-radius: 100%; }

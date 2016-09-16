@@ -16,10 +16,12 @@ img {
 .instructions-container {
   .instructions {
     display: block;
-    background: whitesmoke;
+    background: #215eb2;
     width: 700px;
     height: 700px;
-    margin: 0 auto;
+    // margin: 0 auto;
+    margin: 116px auto;
+
 
     .x-modal {
       width: 50px;
@@ -61,38 +63,55 @@ img {
     display: flex;
 /* align-items: center; */
 justify-content: center;
-top: 110px;
-left: 0px;
-position: absolute;
-
+  margin-top: 100px;
 
 
     //  dsfdf
      .mix-board {
        display: flex;
 
-       .channel-name {
-         text-align: center;
-         font-family: "Baloo Tamma", Arial;
-         text-transform: uppercase;
+       .channels {
+         display: flex;
+          padding-left: 80px;
+         .channel-name {
+           text-align: center;
+           font-family: "Baloo Tamma", Arial;
+           text-transform: uppercase;
+           font-size: 20px;
 
-       }
-       .track {
-          margin: 10px;
-         .fft {
-           border-radius: 1000px;
-             /* height: 400px; */
-             width: 100px;
-             /* height: auto; */
-             height: 100px;
          }
-       }
+         .track {
+           .fft {
+             margin: 10px;
+             border-radius: 1000px;
+               /* height: 400px; */
+               width: 100px;
+               /* height: auto; */
+               height: 100px;
+               &:hover {
+                 cursor: pointer;
+                 opacity: 0.7;
+                 border: 3px solid black;
+                 margin: 7px;
+               }
+           }
+         }
 
+     }
        .mix-control-container {
+
+         height: inherit;
+        display: flex;
+        flex-direction: column;
          .play-button {
            width: 100px;
            height: auto;
            display: block;
+
+/* background: green; */
+/* text-align: center; */
+/* display: flex; */
+          margin: 90px auto;
            &:hover {
              cursor: pointer;
            }

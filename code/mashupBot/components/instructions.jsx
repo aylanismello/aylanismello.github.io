@@ -23,12 +23,12 @@ class Instructions extends React.Component {
 				 className="instructions-container">
 				 <div className="instructions">
 					<div className="x-modal">
-						<img src="../images/x.png"
+						<img src="http://res.cloudinary.com/dfkrjl3pb/image/upload/v1474011907/x_hxdxmy.png"
 							onClick={this.closeModal.bind(this)}/>
 					</div>
 
 
-					<span> Welcome to <div className="logo">mashupBot</div>! </span>
+					
 					<p> The rules of making a mashup are pretty simple. Just.. </p>
 
 					<ul>
