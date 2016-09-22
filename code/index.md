@@ -7,12 +7,14 @@ header: Code
 <div class="entry-content">
 
 
-	<p>I've done many projects both in and out of school. Here's a short portfolio
-		of my favorite work. I am senior at UC Davis, and currently seeking employment
-		as a full time software engineer pending graduation. <br><br>
+	<p>I have a passion for developing full stack web applications with whatever technology fits the app.
+
+
+
+		Here's a short portfolio of my favorite work. <br><br>
 
 		You could also skip ahead to my
-		<a style="color:blue" target='_blank' href="https://www.linkedin.com/in/aylanmello">LinkedIn</a> or
+		<a style="color:blue" target="_blank" href="https://www.linkedin.com/in/aylanmello">LinkedIn</a> or
 
 		<!-- ![My helpful screenshot]({{ site.url }}/assets/screenshot.jpg) -->
 		 <a style="color:blue" target ="_blank" href="{{site.url}}/images/resume.pdf">resume.</a></p>
@@ -20,6 +22,22 @@ header: Code
 
 
 		<br><br>
+
+	<h2 class="app-title">Demixify</h2>
+
+	<h4 class="description">Social playlist creation app built in Rails + ReactJS</h3>
+	<p><a href="http://demixify.xyz">Site</a></p>
+
+	<a href="http://demixify.xyz"><img class="my_image" src=" {{site.url}}/images/demixify.png "></a>
+
+	<h2 class="app-title">mashupBot</h2>
+
+	<h4 class="description">Interactive music creation app built ReactJS</h3>
+	<p><a href="{{site.url}}/code/mashupbot">Site</a></p>
+
+	<a href="{{site.url}}/code/mashupbot"><img class="my_image" src=" {{site.url}}/images/mashup_bot.png "></a>
+
+
 
 	<h2 class="app-title">FireFeed</h2>
 
