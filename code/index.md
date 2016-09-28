@@ -26,14 +26,17 @@ header: Code
 	<h2 class="app-title">Demixify</h2>
 
 	<h4 class="description">Social playlist creation app built in Rails + ReactJS</h4>
-	<p><a href="http://demixify.xyz">Site</a></p>
+	<p><a href="http://demixify.xyz">Site</a>
+	<a href="http://github.com/aylanismello/demixify">Github</a></p>
 
 	<a href="http://demixify.xyz"><img class="my_image" src=" {{site.url}}/images/demixify.png "></a>
 
 	<h2 class="app-title">mashupBot</h2>
 
 	<h4 class="description">Interactive music creation app built ReactJS</h4>
-	<p><a href="{{site.url}}/code/mashupbot">Site</a></p>
+	<p><a href="{{site.url}}/code/mashupbot">Site</a>
+	<a href="http://github.com/aylanismello/mashupbot">Github</a></p>
+
 
 	<a href="{{site.url}}/code/mashupbot"><img class="my_image" src=" {{site.url}}/images/mashup_bot.png "></a>
 
@@ -42,26 +45,19 @@ header: Code
 	<h2 class="app-title">FireFeed</h2>
 
 	<h4 class="description">Pulling curated music data from the Soundcloud API for an eclectic listening experience.</h4>
-	<p><a href="http://burncartel.herokuapp.com">Site</a></p>
+	<p><a href="http://burncartel.herokuapp.com">Site</a>
+	<a href="http://github.com/aylanismello/firefeed">Github</a></p>
+
 
 	<a href="http://burncartel.herokuapp.com"><img class="my_image" src=" {{site.url}}/images/firefeed.png "></a>
-
-
-	<br><br>
-	<!-- APP 1 -->
-	<h2 class="app-title">Splooshed </h2>
-	<h4 class="description"> Using public data records to inform the public and help out the California drought.</h4>
-	<p><a href = "http://splooshed2.herokuapp.com">Live demo</a></p>
-	<a href = "http://splooshed2.herokuapp.com"><img class="my_image" src="{{site.url}}/images/splooshed.png"></a>
-
 
 
 	<br><br>
 	<!-- APP 2 -->
 	<h2 class="app-title">LeapJ</h2>
 	<h4 class="descrption">Hardware hack x Music hack</h4>
-	<p><a href="https://www.youtube.com/watch?v=ZEqsuGx-EKg">Video demo</a></p>
-	<p><a href="https://github.com/azoff/leapj">Github</a></p>
+	<p><a href="https://www.youtube.com/watch?v=ZEqsuGx-EKg">Video</a>
+	<a href="https://github.com/azoff/leapj">Github</a></p>
 
 
 	<img class="my_image" src="{{site.url}}/images/leapj.png">
