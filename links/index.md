@@ -36,7 +36,7 @@ header: Links
 * [Darwin Tunes](http://darwintunes.org/)
 * [E-Sitar](https://www.youtube.com/watch?v=l8UsRkWhNa4)
 
-###  Minutae
+### Minutae
 * [Create Music for Listening](http://web.media.mit.edu/~tristan/)
 
 ### Introspection
