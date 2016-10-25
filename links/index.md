@@ -11,6 +11,7 @@ header: Links
 
 ### New Tech
 * [Redux](http://www.youhavetolearncomputers.com/blog/2015/9/15/a-conceptual-overview-of-redux-or-how-i-fell-in-love-with-a-javascript-state-container)
+* [React Star Wards](https://medium.freecodecamp.com/react-props-state-explained-through-darth-vaders-hunt-for-the-rebels-8ee486576492#.xtqn12ops)
 
 ### (My) Rants
 * [Workflow Anxiety: On DAWS and Programming Languages]({{site.url}}/2016/on-daws-and-programming-languages/)

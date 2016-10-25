@@ -33,7 +33,7 @@ header: Code
 
 	<h2 class="app-title">mashupBot</h2>
 
-	<h4 class="description">Interactive music creation app built ReactJS</h4>
+	<h4 class="description">Interactive music creation app built with ReactJS</h4>
 	<p><a href="{{site.url}}/code/mashupbot">Site</a>
 	<a href="http://github.com/aylanismello/mashupbot">Github</a></p>
 
@@ -42,14 +42,13 @@ header: Code
 
 
 
-	<h2 class="app-title">FireFeed</h2>
+	<h2 class="app-title">Vernacular</h2>
 
-	<h4 class="description">Pulling curated music data from the Soundcloud API for an eclectic listening experience.</h4>
-	<p><a href="http://burncartel.herokuapp.com">Site</a>
-	<a href="http://github.com/aylanismello/firefeed">Github</a></p>
+	<h4 class="description">iOS app for learning languages, in React Native</h4>
+	<p><a href="http://github.com/aylanismello/words">Github</a></p>
 
 
-	<a href="http://burncartel.herokuapp.com"><img class="my_image" src=" {{site.url}}/images/firefeed.png "></a>
+	<a href="http://github.com/aylanismello/words"><img style="width: 300px" class="my_image" src=" {{site.url}}/images/vernacular1.png "></a>
 
 
 	<br><br>
